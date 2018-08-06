@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Account Settings
+{% endblock %}
+
+{% block main %}
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="jumbotron">
+            <h2>Add money</h2>
+                <form method="POST" action="{{ url_for('deposit') }}">
+                    <fieldset>
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Amount" name="amount" required />
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-default" type="submit">Add</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        
+        <div class="col-sm-6">
+            <div class="jumbotron">
+            <h2>Change password</h2>
+                <form method="POST" action="{{ url_for('pwd_change') }}">
+                    <fieldset>
+                        <div class="form-group">
+                            <input class="form-control" type="password" placeholder="Current password" name="ogpassword" required />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="password" placeholder="New password" name="newpassword1" required />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="password" placeholder="Confirm password" name="newpassword2" required />
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-default" type="submit">Change Password</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        
+        
+    </div>
+
+{% endblock %}
